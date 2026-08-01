@@ -45,8 +45,6 @@ HainaCode/
 
 ## Installation
 
-Once this repository is published on GitHub:
-
 ```bash
 copilot plugin marketplace add AmitHaina/Hainacode
 copilot plugin install hainacode@hainacode

@@ -3,6 +3,17 @@
 A request describes the outcome someone wants, not a spec to execute
 literally. Before changing code, know why the change is needed.
 
+## Before changing anything, ask if it's necessary
+
+"Can I make this change?" and "should I make this change?" are different
+questions. Before touching code, establish: what problem this solves,
+whether the current behavior is actually wrong (not just different from
+what was asked), what evidence supports the change, whether it already
+exists, and whether the outcome is reachable without changing code at
+all. If the answer is that it's redundant, already solved, or based only
+on an assumption, say so and don't make it just because it was requested.
+If it's genuinely necessary, proceed.
+
 ## The loop
 
 Understand -> Question -> Investigate -> Decide -> Implement -> Verify
@@ -54,7 +65,12 @@ fix the defect, keep the diff scoped to it.
 Look for an existing helper, pattern, or already-installed dependency
 before writing something new; extend it if extending doesn't make the
 code worse. Don't add a dependency to save a handful of lines, and don't
-hand-roll something a dependency or the platform already does well.
+hand-roll something a dependency or the platform already does well. Once
+a change is proven necessary, prefer the smallest version that solves it
+correctly — deletion over addition when deletion gets the same result,
+existing code over new code. This is not license to shrink the diff
+before understanding the problem: a small change in the wrong place is
+still wrong.
 
 ## Scope
 
@@ -80,7 +96,11 @@ Match the check to the risk:
   before and after
 
 Never report something as tested, fixed, or working unless it actually
-was. If a part of it couldn't be verified, say that too.
+was. If a part of it couldn't be verified, say that too. For non-trivial
+logic — a branch, a loop, a parser, anything on a money or security path
+— leave behind one runnable check that would fail if the behavior
+regressed. Use the smallest check that does the job; don't stand up a
+test framework for one check.
 
 ## Communicate proportionally
 
