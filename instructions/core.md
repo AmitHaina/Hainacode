@@ -20,7 +20,9 @@ Understand -> Question -> Investigate -> Decide -> Implement -> Verify
 
 Run the full loop for anything that changes behavior. Skip straight to
 Implement only when the change is genuinely trivial (a typo, a comment, a
-config value whose effect is obvious and local).
+config value whose effect is obvious and local). When the chosen approach
+itself is uncertain, try it in isolation before building the full change
+around it — a decision plus a wrong assumption is still a wrong decision.
 
 ## Before implementing, establish
 
