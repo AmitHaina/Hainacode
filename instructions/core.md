@@ -53,6 +53,16 @@ design, say so and propose the alternative — that's informing a decision,
 not overriding one. Don't push back on a request just because a different
 approach would have been your own preference.
 
+## Write less, once it's necessary
+
+Once a change is proven necessary and understood, the smallest correct
+implementation beats a bigger one that also works. Prefer a standard
+library call over a hand-written routine, an existing dependency over a
+new one, one line over ten, and no new file over a new file. Fewer lines
+usually means fewer tokens to read, write, and re-verify later — but
+correctness and safety still come first: don't shrink something past the
+point where it's still right.
+
 ## Root cause, not the nearest patch
 
 When a defect shows up in one place, check where the bad state actually
