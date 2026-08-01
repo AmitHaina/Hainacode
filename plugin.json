@@ -1,0 +1,13 @@
+{
+  "name": "hainacode",
+  "description": "Evidence-driven engineering discipline for GitHub Copilot CLI: understand the problem before changing code, distinguish requested from necessary, verify before claiming something works.",
+  "version": "0.1.0",
+  "author": {
+    "name": "AmitHaina"
+  },
+  "homepage": "https://github.com/AmitHaina/Hainacode",
+  "repository": "https://github.com/AmitHaina/Hainacode",
+  "license": "MIT",
+  "keywords": ["engineering-discipline", "verification", "code-review"],
+  "hooks": "hooks.json"
+}
