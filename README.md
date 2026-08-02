@@ -90,8 +90,26 @@ verify before treating the request as done.
 
 ## Updating the rules
 
-Edit `instructions/core.md`. That is the single file every session reads
-from; nothing else needs to change.
+Edit `instructions/core.md` and bump the version in `plugin.json` and
+`.github/plugin/marketplace.json`, then push. Installed copies don't
+auto-update, users need to pull the new version themselves:
+
+```bash
+copilot plugin marketplace update hainacode
+copilot plugin update hainacode
+```
+
+Or update everything installed at once:
+
+```bash
+copilot plugin update --all
+```
+
+Check the new version landed:
+
+```bash
+copilot plugin list
+```
 
 ## Testing changes
 
