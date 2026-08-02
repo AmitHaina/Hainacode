@@ -34,7 +34,7 @@ the rules live, so updating behavior means editing one file.
 HainaCode/
 ├── plugin.json                       # plugin manifest
 ├── hooks.json                         # declares the sessionStart hook
-├── .github/plugin/marketplace.json    # lets this repo be added as a marketplace
+├── .github/plugin/marketplace.json    # lets this repo be added as a marketplace source
 ├── hooks/
 │   └── emit-context.js               # reads core.md, sends it to the session
 ├── instructions/

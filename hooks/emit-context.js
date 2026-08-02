@@ -24,8 +24,11 @@ function main() {
     text = readInstructions();
   } catch (err) {
     // A missing or unreadable instructions file must never block session
-    // start. Emit nothing: the hook is skipped and the session proceeds
-    // without HainaCode context rather than failing.
+    // start. Emit nothing on stdout (that would corrupt the hook's JSON
+    // contract): the session proceeds without HainaCode context rather
+    // than failing. The reason still goes to stderr, which Copilot CLI
+    // doesn't read as hook output, so it's safe for manual debugging.
+    process.stderr.write(`[HainaCode] Failed to load instructions: ${err.message}\n`);
     return;
   }
   if (!text) return;

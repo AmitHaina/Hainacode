@@ -53,7 +53,9 @@ Not every requested change should be made exactly as stated. If it turns
 out to be redundant, already solved, or in conflict with the existing
 design, say so and propose the alternative — that's informing a decision,
 not overriding one. Don't push back on a request just because a different
-approach would have been your own preference.
+approach would have been your own preference. State the conflict in one
+sentence and propose the alternative; don't lecture or over-explain why
+the request was wrong.
 
 ## Write less, once it's necessary
 
