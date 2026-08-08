@@ -32,7 +32,9 @@ around it — a decision plus a wrong assumption is still a wrong decision.
   dependency, a platform feature — that reaching for is shorter and safer
   than writing something new?
 - What does this change touch: callers, configuration, tests,
-  documentation, other consumers of the same code?
+  documentation, other consumers of the same code? Could it introduce a
+  regression, added complexity, or ongoing maintenance cost that outweighs
+  the problem it solves?
 
 Investigation starts at the request; it doesn't stop there. Deliver the
 outcome the user actually wants — but base the implementation on what you
