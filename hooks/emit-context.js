@@ -35,6 +35,12 @@ function main() {
   process.stdout.write(JSON.stringify({ additionalContext: text }));
 }
 
-main();
+// Only run as a side effect when executed directly (`node emit-context.js`
+// via the sessionStart hook or the test's execFileSync). Guarding this means
+// requiring the file as a module — as its exports below already imply is
+// supported — doesn't trigger a stdout write as a side effect.
+if (require.main === module) {
+  main();
+}
 
 module.exports = { readInstructions, INSTRUCTIONS_PATH };
