@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hainacode",
+  "description": "Evidence-driven engineering discipline for AI coding agents: understand the problem before changing code, distinguish requested from necessary, verify before claiming something works.",
+  "owner": {
+    "name": "AmitHaina",
+    "url": "https://github.com/AmitHaina"
+  },
+  "plugins": [
+    {
+      "name": "hainacode",
+      "description": "Understand a problem before changing code, tell requested changes apart from necessary ones, and verify before claiming something works.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
