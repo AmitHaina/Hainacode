@@ -38,4 +38,20 @@ const emptyStdout = execFileSync(process.execPath, [path.join(tmpPlugin, 'hooks'
 assert.strictEqual(emptyStdout, '', 'missing instructions file must produce no stdout');
 fs.rmSync(tmpPlugin, { recursive: true, force: true });
 
-console.log('OK: emit-context.js emits additionalContext and fails silently when the instructions file is missing');
+// 3. Codex case: PLUGIN_DATA (without COPILOT_PLUGIN_DATA) identifies the
+// Codex CLI host. Codex must receive additionalContext nested under
+// hookSpecificOutput, never at the top level.
+const codexStdout = execFileSync(process.execPath, [HOOK], {
+  encoding: 'utf8',
+  env: { ...process.env, PLUGIN_DATA: '/tmp/codex-plugin-data', COPILOT_PLUGIN_DATA: '' },
+});
+const codexParsed = JSON.parse(codexStdout);
+assert.strictEqual(codexParsed.additionalContext, undefined, 'Codex must not receive top-level additionalContext');
+assert.strictEqual(codexParsed.hookSpecificOutput.hookEventName, 'SessionStart');
+assert.strictEqual(
+  codexParsed.hookSpecificOutput.additionalContext,
+  fs.readFileSync(REAL_INSTRUCTIONS, 'utf8').trim(),
+  'Codex hookSpecificOutput.additionalContext must match instructions/core.md verbatim'
+);
+
+console.log('OK: emit-context.js emits additionalContext (Copilot) and hookSpecificOutput (Codex), and fails silently when the instructions file is missing');
