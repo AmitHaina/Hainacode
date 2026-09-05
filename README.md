@@ -1,6 +1,9 @@
 # HainaCode
 
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/xAf9gNQBxG)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%E2%89%A514-brightgreen?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#how-it-works)
 
 A GitHub Copilot CLI and Codex CLI plugin that makes the agent understand
 a problem before changing code, instead of jumping straight to an
