@@ -1,6 +1,7 @@
 # HainaCode
 
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/xAf9gNQBxG)
+[![Release](https://img.shields.io/github/v/release/AmitHaina/Hainacode?style=flat-square)](https://github.com/AmitHaina/Hainacode/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A514-brightgreen?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#how-it-works)
